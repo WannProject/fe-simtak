@@ -1,0 +1,360 @@
+<html lang="en">
+  <head>
+    <!-- icon -->
+    <link rel="icon" type="image/x-icon" href="/assets/icons/favicon.ico" />
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>SIMTAK</title>
+    <!--? link CSS style -->
+    <link rel="stylesheet" href="style.css" />
+    <!--? font awesome -->
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+      rel="stylesheet"
+    />
+    <!--? google font -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&amp;display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <!-- navbar start -->
+    <div class="navbar">
+      <div class="logo">
+        <a href="index.html">
+          <img alt="Logo" src="assets/image/logo.png" />
+          <h3>SIMTAK</h3>
+        </a>
+      </div>
+      <div class="nav-links">
+        <a href="#home" class="active"> Home </a>
+        <a href="#about" class="active"> Tentang </a>
+        <a href="#syarat-pengajuan" class="active"> Syarat Pengajuan </a>
+        <a href="#panduan" class="active"> Panduan </a>
+        <a href="#kontak"> Kontak </a>
+      </div>
+      <div class="user-icon">
+        <img src="assets/image/profil.jpg" alt="user image" />
+        <p>Kurniawan</p>
+      </div>
+      <div class="hamburger" onclick="toggleNavbar()">
+        <i class="fas fa-bars"></i>
+      </div>
+    </div>
+    <!-- Sidebar Navigation -->
+    <div class="side-nav" id="sideNav">
+      <div class="side-nav-header">
+        <i class="fas fa-times" onclick="toggleNavbar()"></i>
+        <img src="assets/image/profil.jpg" alt="user image" />
+      </div>
+      <div class="side-nav-links">
+        <a href="#home"> Home </a>
+        <a href="#about"> Tentang </a>
+        <a href="#syarat-pengajuan"> Syarat Pengajuan </a>
+        <a href="#panduan"> Panduan </a>
+        <a href="#kontak"> Kontak </a>
+      </div>
+    </div>
+    <!-- navbar end -->
+
+    <!-- hero start -->
+    <div class="hero" id="home">
+      <div class="hero-teks">
+        <h1>SELAMAT DATANG DI WEBSITE KAMI</h1>
+        <p>Sistem Informasi Manajemen Tugas Akhir (SIMTAK)</p>
+        <div class="buttons">
+          <a id="register-btn" href="javascript:void(0)">DAFTAR</a>
+          <a id="login-btn" href="javascript:void(0)">MASUK</a>
+        </div>
+      </div>
+      <img
+        alt="Graduation cap on top of books and a diploma"
+        src="assets/image/book.svg"
+      />
+    </div>
+    <!-- hero end -->
+
+    <!-- todo popup start -->
+    <!--? popup register -->
+    <div class="popup hidden" id="register-popup">
+      <div class="popup-card">
+        <div class="close-btn">✖</div>
+        <h3>Pilih Peran untuk Registrasi</h3>
+        <div class="button-container">
+          <a href="form/mahasiswa/register.html" class="role-link">
+            <img src="assets/image/mahasiswa-icon.png" alt="Mahasiswa" />
+            <p>Mahasiswa</p>
+          </a>
+          <a href="form/dpa/register.html" class="role-link">
+            <img src="assets/image/dpa-icon1.png" alt="DPA" />
+            <p>DPA</p>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!--? Popup Login -->
+    <div class="popup hidden" id="login-popup">
+      <div class="popup-card">
+        <h3>Pilih Peran untuk Login</h3>
+        <div class="button-container">
+          <a href="form/mahasiswa/login.html" class="role-link">
+            <img src="assets/image/mahasiswa-icon.png" alt="Mahasiswa" />
+            <p>Mahasiswa</p>
+          </a>
+          <a href="form/dpa/login.html" class="role-link">
+            <img src="assets/image/dpa-icon1.png" alt="DPA" />
+            <p>DPA</p>
+          </a>
+          <a href="form/kaprodi/login.html" class="role-link">
+            <img src="assets/image/kaprodi-icon.png" alt="Kaprodi" />
+            <p>Kaprodi</p>
+          </a>
+          <a href="form/rektor/login.html" class="role-link">
+            <img src="assets/image/rektor-icon.png" alt="Rektor" />
+            <p>Rektor</p>
+          </a>
+          <a href="form/wakil_rektor/login.html" class="role-link">
+            <img src="assets/image/wakil-ektor-icon.png" alt="Rektor" />
+            <p>Wakil Rektor</p>
+          </a>
+          <a href="form/admin/login.html" class="role-link">
+            <img src="assets/image/admin-icon.png" alt="Admin" />
+            <p>Admin</p>
+          </a>
+        </div>
+        <div class="close-btn">✖</div>
+      </div>
+    </div>
+    <!-- todo popup end -->
+
+    <!-- about start -->
+    <div class="about" id="about">
+      <h2>ABOUT</h2>
+      <p>
+        Sistem Informasi Manajemen Tugas Akhir (SIMTAK) adalah platform berbasis
+        web yang dirancang untuk mempermudah proses pengelolaan tugas akhir
+        mahasiswa. Dengan fitur-fitur inovatif, sistem ini membantu semua pihak
+        yang terlibat—mahasiswa, dosen, Kaprodi, dan admin akademik—untuk
+        menjalankan tugas mereka dengan lebih efisien dan terstruktur.
+      </p>
+      <h3>Fitur Utama:</h3>
+      <ol>
+        <li>
+          Mahasiswa dapat mengajukan judul tugas akhir secara daring, memudahkan
+          proses tanpa harus bertatap muka.
+        </li>
+        <li>
+          Sistem mendukung alur persetujuan berjenjang mulai dari Dosen
+          Penasihat Akademik (DPA) hingga Kaprodi, dengan notifikasi real-time.
+        </li>
+        <li>
+          Fasilitas untuk mengunggah dan menyimpan dokumen penting seperti Surat
+          Keputusan (SK), revisi, atau saran dari dosen.
+        </li>
+        <li>
+          DPA dan Kaprodi dapat memberikan saran, komentar, atau permintaan
+          revisi terhadap pengajuan judul mahasiswa.
+        </li>
+        <li>
+          Mahasiswa dapat mengunduh SK tugas akhir yang telah disetujui langsung
+          dari sistem.
+        </li>
+        <li>
+          Kaprodi dapat menetapkan dan mengatur batas waktu pengajuan tugas
+          akhir sesuai kebijakan kampus.
+        </li>
+        <li>
+          Referensi Judul: Menyediakan referensi judul tugas akhir yang relevan
+          untuk membantu mahasiswa dalam menentukan topik penelitian mereka.
+        </li>
+      </ol>
+      <img alt="Graduation cap icon" src="assets/image/element.svg" />
+    </div>
+    <!-- about end -->
+
+    <!-- persyaratan pengajuan start -->
+    <div class="requirements" id="syarat-pengajuan">
+      <h2>Syarat pengajuan Judul</h2>
+      <ol>
+        <li>Mahasiswa harus memiliki akun yang terdaftar di sistem.</li>
+        <li>
+          Pengajuan judul hanya dapat dilakukan setelah akun disetujui oleh
+          Kaprodi.
+        </li>
+        <li>
+          Dosen Penasihat Akademik (DPA) harus menyetujui pengajuan judul
+          mahasiswa.
+        </li>
+        <li>
+          Pengajuan judul harus dilakukan sesuai dengan batas waktu yang telah
+          ditentukan oleh Kaprodi.
+        </li>
+        <li>
+          Setiap revisi atau saran dari DPA atau Kaprodi harus direspons oleh
+          mahasiswa dalam jangka waktu yang ditentukan.
+        </li>
+        <li>
+          Mahasiswa harus mengunduh Surat Keputusan (SK) setelah tugas akhir
+          disetujui oleh Kaprodi.
+        </li>
+        <li>
+          Dokumen yang diunggah harus dalam format PDF dan sesuai dengan
+          ketentuan yang berlaku.
+        </li>
+      </ol>
+    </div>
+    <!-- persyaratan pengajuan end -->
+
+    <!-- panduan pengguna start -->
+    <div class="panduan" id="panduan">
+      <h2>Panduan Pengguna</h2>
+      <p>
+        Berikut adalah panduan untuk masing-masing pengguna dalam sistem ini.
+        Klik untuk mengunduh panduan dalam format PDF.
+      </p>
+
+      <div class="panduan-container">
+        <!-- Baris pertama: 3 kartu -->
+        <div class="panduan-card">
+          <h3>Panduan Mahasiswa</h3>
+          <p>
+            Mahasiswa dapat mengikuti langkah-langkah ini untuk mengajukan judul
+            tugas akhir dan memanfaatkan fitur lainnya.
+          </p>
+          <a href="panduan_mahasiswa.pdf" class="btn-unduh" download
+            >Unduh PDF</a
+          >
+        </div>
+
+        <div class="panduan-card">
+          <h3>Panduan DPA</h3>
+          <p>
+            Dosen Penasihat Akademik dapat memahami alur persetujuan dan
+            memberikan saran serta revisi terhadap pengajuan judul.
+          </p>
+          <a href="panduan_dpa.pdf" class="btn-unduh" download>Unduh PDF</a>
+        </div>
+
+        <div class="panduan-card">
+          <h3>Panduan Kaprodi</h3>
+          <p>
+            Kaprodi dapat mengetahui cara memilih pembimbing, penguji, dan
+            mengelola batas waktu pengajuan tugas akhir.
+          </p>
+          <a href="panduan_kaprodi.pdf" class="btn-unduh" download>Unduh PDF</a>
+        </div>
+
+        <!-- Baris kedua: 3 kartu -->
+        <div class="panduan-card">
+          <h3>Panduan Rektor</h3>
+          <p>
+            Rektor dapat mengetahui cara meninjau dan menyetujui pemilihan
+            pembimbing serta penguji mahasiswa.
+          </p>
+          <a href="panduan_rektor.pdf" class="btn-unduh" download>Unduh PDF</a>
+        </div>
+
+        <div class="panduan-card">
+          <h3>Panduan Wakil Rektor</h3>
+          <p>
+            Wakil Rektor dapat meninjau keputusan terkait pembimbing dan penguji
+            serta memberikan masukan.
+          </p>
+          <a href="panduan_wakil_rektor.pdf" class="btn-unduh" download
+            >Unduh PDF</a
+          >
+        </div>
+
+        <div class="panduan-card">
+          <h3>Panduan Admin</h3>
+          <p>
+            Admin dapat mengelola pengguna, dokumen, dan berbagai pengaturan
+            dalam sistem ini.
+          </p>
+          <a href="panduan_admin.pdf" class="btn-unduh" download>Unduh PDF</a>
+        </div>
+      </div>
+    </div>
+    <!-- panduan pengguna end -->
+
+    <!-- footer start -->
+    <footer class="footer" id="kontak">
+      <div class="footer-container">
+        <!-- Logo dan Nama -->
+        <div class="footer-brand">
+          <img src="assets/image/logo.png" alt="Logo Simtak" />
+          <div class="footer-info">
+            <span>SIMTAK</span>
+            <p>sistem informasi manajemen tugas akhir</p>
+          </div>
+        </div>
+
+        <!-- Footer Links Social -->
+        <div class="footer-link-social">
+          <!-- footer Links -->
+          <div class="footer-links">
+            <h4>Navigasi</h4>
+            <ul>
+              <li><a href="#home">Home</a></li>
+              <li><a href="#about">Tentang</a></li>
+              <li><a href="#syarat-pengajuan">Syarat Pengajuan</a></li>
+              <li><a href="#panduan">Panduan</a></li>
+              <li><a href="#kontak">Kontak</a></li>
+            </ul>
+          </div>
+
+          <!-- Social Media Links -->
+          <div class="social-icons">
+            <h4>Ikuti Kami</h4>
+            <ul>
+              <li>
+                <a href="https://wa.me/6285343617171" target="_blank"
+                  ><i class="fas fa-phone"></i> Kontak</a
+                >
+              </li>
+              <li>
+                <a href="mailto:bina.adinata@gmail.com" target="_blank"
+                  ><i class="fas fa-envelope"></i> Email</a
+                >
+              </li>
+              <li>
+                <a href="https://www.instagram.com/bina.adinata" target="_blank"
+                  ><i class="fab fa-instagram"></i> Instagram</a
+                >
+              </li>
+              <li>
+                <a
+                  href="https://web.facebook.com/profile.php?id=100088522317702"
+                  target="_blank"
+                  ><i class="fab fa-facebook"></i> Facebook</a
+                >
+              </li>
+              <li>
+                <a
+                  href="https://maps.app.goo.gl/t8n48WGPPJgbnhfe7"
+                  target="_blank"
+                  ><i class="fas fa-map-marker-alt"></i> Location</a
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Footer Bottom -->
+      <div class="footer-bottom">
+        <p>
+          © Copyright 2025 by
+          <a href="https://wanndev.vercel.app" target="_blank">wanndev</a>, All
+          Rights Reserved.
+        </p>
+      </div>
+    </footer>
+    <!-- footer end -->
+
+    <!-- footer end -->
+  </body>
+  <script src="script.js"></script>
+</html>

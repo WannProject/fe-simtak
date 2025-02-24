@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- todo Boxicons -->
+    <link
+      href="https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+    <!--todo My CSS -->
+    <link rel="stylesheet" href="css/daftar-mahasiswa.css" />
+
+    <title>Dashboard DPA</title>
+  </head>
+  <body>
+    <!--? SIDEBAR -->
+    <section id="sidebar">
+      <a href="#" class="brand">
+        <img src="../assets/image/logo.png" alt="" />
+        <p>SIMTAK</p>
+      </a>
+      <ul class="side-menu top">
+        <li>
+          <a href="dashboard.html">
+            <i class="bx bxs-dashboard"></i>
+            <span class="text">Dashboard</span>
+          </a>
+        </li>
+        <li>
+          <a href="daftar-judul.html">
+            <i class="bx bx-book-reader"></i>
+            <span class="text">daftar judul</span>
+          </a>
+        </li>
+        <li class="active">
+          <a href="daftar-mahasiswa.html">
+            <i class="bx bxs-group"></i>
+            <span class="text">daftar mahasiswa</span>
+          </a>
+        </li>
+      </ul>
+      <ul class="side-menu">
+        <hr />
+        <li>
+          <a href="settings.html">
+            <i class="bx bxs-cog"></i>
+            <span class="text">Settings</span>
+          </a>
+        </li>
+        <li>
+          <a href="#" class="logout">
+            <i class="bx bxs-log-out-circle"></i>
+            <span class="text">Logout</span>
+          </a>
+        </li>
+      </ul>
+    </section>
+    <!--? SIDEBAR -->
+
+    <!--? CONTENT -->
+    <section id="content">
+      <!--? NAVBAR -->
+      <nav>
+        <i class="bx bx-menu"></i>
+        <form action="#">
+          <div class="form-input">
+            <input type="search" placeholder="Search..." />
+            <button type="submit" class="search-btn">
+              <i class="bx bx-search"></i>
+            </button>
+          </div>
+        </form>
+        <input type="checkbox" id="switch-mode" hidden />
+        <label for="switch-mode" class="switch-mode"></label>
+        <!-- popup notifikasi -->
+        <a href="#" class="notification-bell">
+          <i class="bx bxs-bell"></i>
+          <span class="num">8</span>
+          <!-- Dropdown untuk notifikasi -->
+          <div class="notification-dropdown">
+            <div class="notification-header">
+              <h3>Notifikasi</h3>
+              <button class="clear-all">Hapus Semua</button>
+            </div>
+            <div class="notification-list">
+              <!-- Notifikasi akan dirender di sini -->
+            </div>
+          </div>
+        </a>
+        <a href="#" class="profile">
+          <img src="../assets/image/profil.jpg" />
+        </a>
+      </nav>
+      <!--? NAVBAR -->
+
+      <!--? MAIN -->
+      <main>
+        <div class="head-title">
+          <div class="left">
+            <ul class="breadcrumb">
+              <li>
+                <a href="#">Dashboard</a>
+              </li>
+              <li><i class="bx bx-chevron-right"></i></li>
+              <li>
+                <a class="active" href="#">Daftar Mahasiswa</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <!--? tabel data -->
+        <div class="table-data">
+          <div class="order">
+            <div class="head-judul">
+              <h1>Daftar Mahasiswa Bimbingan</h1>
+              <div class="filter-dropdown">
+                <i class="bx bx-filter" id="filter-icon"></i>
+                <ul class="dropdown-menu" id="dropdown-menu">
+                  <li>Sistem Komputer</li>
+                  <li>Sistem Informasi</li>
+                  <li>Bisnis Digital</li>
+                </ul>
+              </div>
+            </div>
+            <!-- tabel mahasiswa -->
+            <table>
+              <thead>
+                <tr>
+                  <th>No</th>
+                  <th>User</th>
+                  <th>Nama</th>
+                  <th>Nim</th>
+                  <th>Jurusan</th>
+                  <th>Kontak</th>
+                  <th>Status</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>1.</td>
+                  <td class="user">
+                    <img src="../assets/image/profil.jpg" />
+                  </td>
+                  <td>Kurniawan</td>
+                  <td>2021021022</td>
+                  <td>Sistem Informasi</td>
+                  <td>
+                    <a href="https://wa.me/6285825091329" target="_blank"
+                      ><i class="bx bxl-whatsapp"></i
+                    ></a>
+                  </td>
+                  <td><span class="status completed">disetujui</span></td>
+                </tr>
+
+                <tr>
+                  <td>2.</td>
+                  <td class="user">
+                    <img src="../assets/image/profil.jpg" />
+                  </td>
+                  <td>Kurniawan</td>
+                  <td>2021021022</td>
+                  <td>Sistem Informasi</td>
+                  <td>
+                    <a href="https://wa.me/6285825091329" target="_blank"
+                      ><i class="bx bxl-whatsapp"></i
+                    ></a>
+                  </td>
+                  <td><span class="status tolak">Ditolak</span></td>
+                </tr>
+
+                <tr>
+                  <td>3.</td>
+                  <td class="user">
+                    <img src="../assets/image/profil.jpg" />
+                  </td>
+                  <td>wanndev_</td>
+                  <td>2021021022</td>
+                  <td>Sistem Informasi</td>
+                  <td>
+                    <a href="https://wa.me/6285825091329" target="_blank"
+                      ><i class="bx bxl-whatsapp"></i
+                    ></a>
+                  </td>
+                  <td><span class="status process">diproses</span></td>
+                </tr>
+
+                <tr>
+                  <td>4.</td>
+                  <td class="user">
+                    <img src="../assets/image/profil.jpg" />
+                  </td>
+                  <td>Kurniawan</td>
+                  <td>2021021022</td>
+                  <td>Sistem Informasi</td>
+                  <td>
+                    <a href="https://wa.me/6285825091329" target="_blank"
+                      ><i class="bx bxl-whatsapp"></i
+                    ></a>
+                  </td>
+                  <td><span class="status completed">disetujui</span></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </main>
+      <!--? MAIN -->
+    </section>
+    <!--? CONTENT -->
+
+    <script src="js/dpa.js"></script>
+  </body>
+</html>

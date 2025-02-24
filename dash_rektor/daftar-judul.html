@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- todo Boxicons -->
+    <link
+      href="https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+    <!--todo My CSS -->
+    <link rel="stylesheet" href="css/daftar-judul.css" />
+
+    <title>Dashboard Rektor - WR1</title>
+  </head>
+  <body>
+    <!--? SIDEBAR -->
+    <section id="sidebar">
+      <a href="#" class="brand">
+        <img src="../assets/image/logo.png" alt="" />
+        <p>SIMTAK</p>
+      </a>
+      <ul class="side-menu top">
+        <li>
+          <a href="dashboard.html">
+            <i class="bx bxs-dashboard"></i>
+            <span class="text">Dashboard</span>
+          </a>
+        </li>
+        <li class="active">
+          <a href="daftar-judul.html">
+            <i class="bx bx-book-reader"></i>
+            <span class="text">daftar judul</span>
+          </a>
+        </li>
+      </ul>
+      <ul class="side-menu">
+        <hr />
+        <li>
+          <a href="settings.html">
+            <i class="bx bxs-cog"></i>
+            <span class="text">Settings</span>
+          </a>
+        </li>
+        <li>
+          <a href="#" class="logout">
+            <i class="bx bxs-log-out-circle"></i>
+            <span class="text">Logout</span>
+          </a>
+        </li>
+      </ul>
+    </section>
+    <!--? SIDEBAR -->
+
+    <!--? CONTENT -->
+    <section id="content">
+      <!--? NAVBAR -->
+      <nav>
+        <i class="bx bx-menu"></i>
+        <form action="#">
+          <div class="form-input">
+            <input type="search" placeholder="Search..." />
+            <button type="submit" class="search-btn">
+              <i class="bx bx-search"></i>
+            </button>
+          </div>
+        </form>
+        <input type="checkbox" id="switch-mode" hidden />
+        <label for="switch-mode" class="switch-mode"></label>
+
+        <!-- popup notifikasi -->
+        <a href="#" class="notification-bell">
+          <i class="bx bxs-bell"></i>
+          <span class="num">8</span>
+          <!-- Dropdown untuk notifikasi -->
+          <div class="notification-dropdown">
+            <div class="notification-header">
+              <h3>Notifikasi</h3>
+              <button class="clear-all">Hapus Semua</button>
+            </div>
+            <div class="notification-list">
+              <!-- Notifikasi akan dirender di sini -->
+            </div>
+          </div>
+        </a>
+        <a href="#" class="profile">
+          <img src="../assets/image/profil.jpg" />
+        </a>
+      </nav>
+      <!--? NAVBAR -->
+
+      <!--? MAIN -->
+      <main>
+        <div class="head-title">
+          <div class="left">
+            <ul class="breadcrumb">
+              <li>
+                <a href="dashboard.html">Dashboard</a>
+              </li>
+              <li><i class="bx bx-chevron-right"></i></li>
+              <li>
+                <a class="active" href="daftar-judul.html">Daftar Judul</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <!--? tabel Pengajuan judul -->
+        <div class="tabel-judul">
+          <div class="tabel-judul">
+            <div class="head-judul">
+              <h1>Daftar Pengajuan Judul</h1>
+              <div class="filter-dropdown">
+                <i class="bx bx-filter" id="filter-icon"></i>
+                <ul class="dropdown-menu" id="dropdown-menu">
+                  <li>Sistem Komputer</li>
+                  <li>Sistem Informasi</li>
+                  <li>Bisnis Digital</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <!-- daftar judul start -->
+          <div class="card">
+            <div class="user-info">
+              <img
+                src="../assets/image/profil.jpg"
+                alt="User Icon"
+                class="user-icon"
+              />
+              <div>
+                <p class="user-name">Kurniawan</p>
+                <p class="user-details">2021021022 | Sistem Informasi</p>
+              </div>
+            </div>
+            <!-- list judul user -->
+            <div class="judul-list">
+              <div class="judul-item">
+                <div class="judul-text">
+                  <div class="judul">
+                    <span class="title">Judul:</span>
+                    <span style="width: 80%"
+                      >Sistem Informasi Pengelolaan Tugas Akhir Mahasiswa
+                      Berbasis Website pada Institut Teknologi dan Bisnis Bina
+                      Adinata hello world
+                      <a href="#" class="selengkapnya"
+                        >Selengkapnya &raquo;</a
+                      ></span
+                    >
+                  </div>
+                </div>
+
+                <div class="actions">
+                  <button class="action-button setuju" title="Setujui">
+                    <img
+                      src="../assets/icons/setuju.png"
+                      alt="Revisi Icon"
+                      width="24"
+                      height="24"
+                    />
+                  </button>
+                  <button class="action-button tolak" title="Tolak">
+                    <img
+                      src="../assets/icons/tolak.png"
+                      alt="Revisi Icon"
+                      width="24"
+                      height="24"
+                    />
+                  </button>
+                  <button class="action-button revisi" title="Revisi">
+                    <img
+                      src="../assets/icons/revisi.png"
+                      alt="Revisi Icon"
+                      width="24"
+                      height="24"
+                    />
+                  </button>
+                </div>
+              </div>
+            </div>
+            <p class="date">20-06-2025</p>
+          </div>
+
+          <div class="card">
+            <div class="user-info">
+              <img
+                src="../assets/image/profil.jpg"
+                alt="User Icon"
+                class="user-icon"
+              />
+              <div>
+                <p class="user-name">Kurniawan</p>
+                <p class="user-details">2021021022 | Sistem Informasi</p>
+              </div>
+            </div>
+            <!-- list judul user -->
+            <div class="judul-list">
+              <div class="judul-item">
+                <div class="judul-text">
+                  <div class="judul">
+                    <span class="title">Judul:</span>
+                    <span style="width: 80%"
+                      >Sistem Informasi Pengelolaan Tugas Akhir Mahasiswa
+                      Berbasis Website pada Institut Teknologi dan Bisnis Bina
+                      Adinata hello world
+                      <a href="#" class="selengkapnya"
+                        >Selengkapnya &raquo;</a
+                      ></span
+                    >
+                  </div>
+                </div>
+
+                <div class="actions">
+                  <button class="action-button setuju" title="Setujui">
+                    <img
+                      src="../assets/icons/setuju.png"
+                      alt="Revisi Icon"
+                      width="24"
+                      height="24"
+                    />
+                  </button>
+                  <button class="action-button tolak" title="Tolak">
+                    <img
+                      src="../assets/icons/tolak.png"
+                      alt="Revisi Icon"
+                      width="24"
+                      height="24"
+                    />
+                  </button>
+                  <button class="action-button revisi" title="Revisi">
+                    <img
+                      src="../assets/icons/revisi.png"
+                      alt="Revisi Icon"
+                      width="24"
+                      height="24"
+                    />
+                  </button>
+                </div>
+              </div>
+            </div>
+            <p class="date">20-06-2025</p>
+          </div>
+
+          <!-- daftar judul end -->
+
+          <!--todo Popup Judul-view start-->
+          <div id="modal" class="card-popup">
+            <div class="card">
+              <button class="close-button" title="Close"></button>
+              <div class="user-info">
+                <img
+                  src="../assets/image/profil.jpg"
+                  alt="User Icon"
+                  class="user-icon"
+                />
+                <div>
+                  <p class="user-name">Kurniawan</p>
+                  <p class="user-details">2021021022 | Sistem Informasi</p>
+                </div>
+              </div>
+              <!-- list judul user -->
+
+              <div class="judul-list">
+                <div class="judul-item">
+                  <div class="judul-text">
+                    <div class="judul">
+                      <table border="1" cellspacing="0" cellpadding="10">
+                        <thead>
+                          <tr>
+                            <th>Jabatan</th>
+                            <th>Nama</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <td>Pembimbing 1</td>
+                            <td>Dedy Hendryadi S.Kom., M.Kom</td>
+                          </tr>
+                          <tr>
+                            <td>Pembimbing 2</td>
+                            <td>Juniarti iryani S.Pd., M.Pd</td>
+                          </tr>
+                          <tr>
+                            <td>Penguji 1</td>
+                            <td>Husni Sulaiman S.Kom., M.Kom</td>
+                          </tr>
+                          <tr>
+                            <td>Penguji 2</td>
+                            <td>Andi nurul faizah S.Pd., M.Pd</td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+
+                    <div class="judul">
+                      <span class="title-list">Judul:</span>
+                      <p>
+                        Sistem Informasi Pengelolaan Tugas Akhir Mahasiswa
+                        Berbasis Website pada institut teknologi dan bisnis bina
+                        adinata
+                      </p>
+                    </div>
+
+                    <div class="judul">
+                      <span class="title-list">Permasalahan:</span>
+                      <p>
+                        Di Institut Teknologi dan Bisnis Bina Adinata,
+                        pengelolaan tugas akhir mahasiswa yang masih dilakukan
+                        secara manual menimbulkan berbagai kendala, terutama
+                        dalam efisiensi waktu. Mahasiswa harus menyesuaikan
+                        jadwal dengan dosen pembimbing untuk konsultasi
+                        langsung, sementara beban kerja dosen yang padat sering
+                        kali mengakibatkan proses pengajuan tertunda.
+                        Ketidakhadiran dosen di kampus juga menjadi hambatan,
+                        yang memperlambat kelancaran proses persetujuan judul.
+                        Kondisi ini secara keseluruhan dapat menghambat kemajuan
+                        studi mahasiswa dan menurunkan efektivitas pengelolaan
+                        akademik. (Irfan dkk., 2024) menyatakan bahwa kondisi
+                        ini menunjukkan adanya kesenjangan antara kebutuhan
+                        institusi dengan solusi teknologi yang tersedia.
+                      </p>
+                    </div>
+
+                    <div class="judul">
+                      <span class="title-list">Sistem kerja:</span>
+                      <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                        Praesentium debitis rerum aliquam culpa iusto, vitae ea
+                        neque error fugit laudantium velit incidunt magnam,
+                        architecto nostrum impedit suscipit repudiandae
+                        consequuntur? Alias at commodi deserunt illo vero
+                        aperiam! Ratione quos recusandae suscipit, corrupti in
+                        vitae facilis doloribus, expedita odio reiciendis
+                        quibusdam libero neque voluptatem pariatur explicabo
+                        sint laboriosam veniam quidem sapiente beatae?
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- todo jurnal pdf -->
+              <div class="pdf-download">
+                <span class="title-list">Jurnal Pendukung:</span>
+                <ul>
+                  <li>
+                    <a href="path/to/file1.pdf" download="PengajuanJudul1.pdf"
+                      >Download File 1</a
+                    >
+                  </li>
+                  <li>
+                    <a href="path/to/file2.pdf" download="PengajuanJudul2.pdf"
+                      >Download File 2</a
+                    >
+                  </li>
+                  <li>
+                    <a href="path/to/file3.pdf" download="PengajuanJudul3.pdf"
+                      >Download File 3</a
+                    >
+                  </li>
+                </ul>
+              </div>
+              <!-- todo tanggal -->
+              <p class="date">20-06-2025</p>
+            </div>
+          </div>
+          <!-- Popup Judul-view end-->
+
+          <!-- Popup Konfirmasi -->
+          <div id="overlay"></div>
+          <div id="confirmation-popup" class="popup">
+            <div class="popup-content">
+              <h2>Konfirmasi Tindakan</h2>
+              <p>Apakah Anda yakin akan melakukan tindakan ini?</p>
+              <textarea
+                id="comment"
+                placeholder="Tambahkan komentar (opsional)"
+              ></textarea>
+              <div class="popup-actions">
+                <button id="confirm-button">Ya</button>
+                <button id="cancel-button">Tidak</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- end popup konfirmasi -->
+        </div>
+        <!--? end tabel pengajuan judul -->
+      </main>
+      <!--? MAIN -->
+    </section>
+    <!--? CONTENT -->
+
+    <script src="/dash_rektor/js/rektor.js"></script>
+    <script src="/dash_rektor/js/confirm.js"></script>
+    <!-- =============================================================== -->
+    <script>
+      // TODO POPUP START DAFTAR JUDUL SELENGKAPNYA=============================================
+      document.addEventListener("DOMContentLoaded", function () {
+        const modal = document.getElementById("modal");
+        const selengkapnyaButtons = document.querySelectorAll(".selengkapnya");
+        const closeButton = document.querySelector(".close-button");
+
+        // Fungsi untuk menampilkan modal
+        const showModal = () => {
+          modal.style.display = "block";
+          document.body.style.overflow = "hidden"; // Mencegah scrolling pada background
+        };
+
+        // Fungsi untuk menyembunyikan modal
+        const hideModal = () => {
+          modal.style.display = "none";
+          document.body.style.overflow = "auto"; // Mengembalikan scrolling
+        };
+
+        // Event listener untuk tombol "Selengkapnya"
+        selengkapnyaButtons.forEach((button) => {
+          button.addEventListener("click", (event) => {
+            event.preventDefault(); // Mencegah tindakan default link
+            showModal();
+          });
+        });
+
+        // Event listener untuk close button
+        if (closeButton) {
+          closeButton.addEventListener("click", hideModal);
+        }
+
+        // Tutup modal jika pengguna mengklik di luar modal
+        window.addEventListener("click", (event) => {
+          if (event.target === modal) {
+            hideModal();
+          }
+        });
+
+        // Tutup modal dengan tombol ESC
+        document.addEventListener("keydown", (event) => {
+          if (event.key === "Escape") {
+            hideModal();
+          }
+        });
+      });
+      // TODO POPUP END DAFTAR JUDUL SELENGKAPNYA=====================================
+    </script>
+  </body>
+</html>

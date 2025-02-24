@@ -1,0 +1,1239 @@
+/* todo font style */
+@import url("https://fonts.googleapis.com/css2?family=Anaheim:wght@400..800&family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-transform: capitalize;
+}
+
+a {
+  text-decoration: none;
+}
+
+li {
+  list-style: none;
+}
+
+:root {
+  --poppins: "Poppins", sans-serif;
+  --lato: "Lato", sans-serif;
+
+  --light: #f9f9f9;
+  --white: #fff;
+  --blue: #0c1194;
+  --light-blue: #cfe8ff;
+  --grey: #eee;
+  --dark-grey: #aaaaaa;
+  --dark: #342e37;
+  --red: #db504a;
+  --yellow: #ffce26;
+  --light-yellow: #fff2c6;
+  --orange: #fd7238;
+  --light-orange: #ffe0d3;
+  --setuju: #0b7f07;
+  --tolak: #d30909;
+  --proses: #bac101;
+}
+
+html {
+  overflow-x: hidden;
+}
+
+body.dark {
+  --light: #0c0c1e;
+  --grey: #060714;
+  --dark: #fbfbfb;
+}
+
+body {
+  background: var(--grey);
+  overflow-x: hidden;
+}
+
+body.transition-enabled {
+  transition: background-color 0.5s ease, color 0.5s ease;
+}
+
+/*todo SIDEBAR */
+#sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 280px;
+  height: 100%;
+  background: var(--light);
+  z-index: 2000;
+  font-family: var(--lato);
+  transition: 0.3s ease;
+  overflow-x: hidden;
+  scrollbar-width: none;
+  display: flex; /* Tambahkan ini */
+  flex-direction: column; /* Tambahkan ini */
+}
+#sidebar::--webkit-scrollbar {
+  display: none;
+}
+#sidebar.hide {
+  width: 60px;
+}
+#sidebar .brand {
+  font-size: 24px;
+  padding-top: 20px;
+  font-weight: 700;
+  height: 56px;
+  display: flex;
+  align-items: center;
+  color: var(--blue);
+  position: sticky;
+  top: 0;
+  left: 0;
+  background: var(--light);
+  z-index: 500;
+  padding-bottom: 20px;
+  box-sizing: content-box;
+}
+#sidebar .brand img {
+  margin-right: 20px;
+  margin-left: 20px;
+  width: 20%;
+  display: flex;
+  justify-content: center;
+  transition: 0.3s ease; /* Menambahkan transisi untuk animasi yang halus */
+}
+#sidebar .brand p {
+  font-weight: 800;
+  font-size: 25px;
+  transition: 0.3s ease; /* Menambahkan transisi untuk animasi yang halus */
+}
+#sidebar .side-menu {
+  width: 100%;
+  margin-top: 48px;
+}
+#sidebar .side-menu:last-child {
+  margin-top: auto; /* Mendorong menu ke bagian bawah */
+  margin-bottom: 48px; /* Memberi jarak dengan bagian bawah sidebar */
+}
+#sidebar hr {
+  width: 80%;
+  height: 2px; /* Membuat garis lebih tebal */
+  background-color: var(--grey); /* Warna garis */
+  border: none; /* Menghilangkan border default */
+  margin: 15px auto; /* Auto margin kiri-kanan untuk posisi tengah */
+}
+#sidebar .side-menu li {
+  height: 48px;
+  background: transparent;
+  margin-left: 6px;
+  border-radius: 48px 0 0 48px;
+  padding: 4px;
+}
+#sidebar .side-menu li.active {
+  background: var(--grey);
+  position: relative;
+}
+#sidebar .side-menu li.active::before {
+  content: "";
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  top: -40px;
+  right: 0;
+  box-shadow: 20px 20px 0 var(--grey);
+  z-index: -1;
+}
+#sidebar .side-menu li.active::after {
+  content: "";
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  bottom: -40px;
+  right: 0;
+  box-shadow: 20px -20px 0 var(--grey);
+  z-index: -1;
+}
+#sidebar .side-menu li a {
+  width: 100%;
+  height: 100%;
+  background: var(--light);
+  display: flex;
+  align-items: center;
+  border-radius: 48px;
+  font-size: 16px;
+  color: var(--dark);
+  white-space: nowrap;
+  overflow-x: hidden;
+}
+#sidebar .side-menu.top li.active a {
+  color: var(--blue);
+}
+#sidebar.hide .side-menu li a {
+  width: calc(48px - (4px * 2));
+  transition: width 0.3s ease;
+}
+#sidebar .side-menu li a.logout {
+  color: var(--red);
+}
+#sidebar .side-menu.top li a:hover {
+  color: var(--blue);
+}
+#sidebar .side-menu li a .bx {
+  min-width: calc(60px - ((4px + 6px) * 2));
+  display: flex;
+  justify-content: center;
+}
+/*todo SIDEBAR */
+
+/*todo CONTENT */
+#content {
+  position: relative;
+  width: calc(100% - 280px);
+  left: 280px;
+  transition: 0.3s ease;
+}
+#sidebar.hide ~ #content {
+  width: calc(100% - 60px);
+  left: 60px;
+}
+#sidebar.hide .brand img {
+  width: 40px;
+  margin-left: 10px;
+  margin-right: 10px;
+  margin-top: -35px;
+}
+#sidebar.hide .brand p {
+  display: none; /* Menyembunyikan teks SIMTAK */
+}
+
+/* todo NAVBAR */
+#content nav {
+  height: 56px;
+  background: var(--light);
+  padding: 0 24px;
+  display: flex;
+  align-items: center;
+  grid-gap: 24px;
+  font-family: var(--lato);
+  position: sticky;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+}
+#content nav::before {
+  content: "";
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  bottom: -40px;
+  left: 0;
+  border-radius: 50%;
+  box-shadow: -20px -20px 0 var(--light);
+}
+#content nav .bx.bx-menu {
+  cursor: pointer;
+  color: var(--dark);
+}
+#content nav .nav-link {
+  font-size: 16px;
+  transition: 0.3s ease;
+}
+#content nav .nav-link:hover {
+  color: var(--blue);
+}
+#content nav form {
+  max-width: 400px;
+  width: 100%;
+  margin-right: auto;
+}
+#content nav form .form-input {
+  display: flex;
+  align-items: center;
+  height: 36px;
+}
+#content nav form .form-input input {
+  flex-grow: 1;
+  padding: 0 16px;
+  height: 100%;
+  border: none;
+  background: var(--grey);
+  border-radius: 36px 0 0 36px;
+  outline: none;
+  width: 100%;
+  color: var(--dark);
+}
+#content nav form .form-input button {
+  width: 36px;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: var(--blue);
+  color: var(--light);
+  font-size: 18px;
+  border: none;
+  outline: none;
+  border-radius: 0 36px 36px 0;
+  cursor: pointer;
+}
+#content nav .profile img {
+  width: 36px;
+  height: 36px;
+  object-fit: cover;
+  border-radius: 50%;
+}
+#content nav .switch-mode {
+  display: block;
+  min-width: 50px;
+  height: 25px;
+  border-radius: 25px;
+  background: var(--grey);
+  cursor: pointer;
+  position: relative;
+}
+#content nav .switch-mode::before {
+  content: "";
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  bottom: 2px;
+  width: calc(25px - 4px);
+  background: var(--blue);
+  border-radius: 50%;
+  transition: all 0.3s ease;
+}
+#content nav #switch-mode:checked + .switch-mode::before {
+  left: calc(100% - (25px - 4px) - 2px);
+}
+
+/* Notification Styles */
+#content nav .notification-bell {
+  position: relative;
+  cursor: pointer;
+  padding: 8px;
+  transition: all 0.3s ease;
+}
+#content nav .notification-bell:hover i {
+  color: var(--primary);
+  transform: scale(1.1);
+}
+#content nav .notification-bell i {
+  font-size: 24px;
+  color: var(--dark);
+  transition: all 0.3s ease;
+}
+#content nav .notification-bell .num {
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  border: 2px solid var(--light);
+  background: var(--red);
+  color: var(--light);
+  font-weight: 700;
+  font-size: 12px;
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  padding-top: 1.5px;
+}
+#content nav .notification-bell .notification-dropdown {
+  position: absolute;
+  top: calc(100% + 10px);
+  right: -10px;
+  width: 360px;
+  background: var(--light);
+  border-radius: 12px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+  display: none;
+  z-index: 1000;
+  overflow: hidden;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+}
+#content nav .notification-bell .notification-dropdown.show {
+  display: block;
+  animation: slideDown 0.3s ease forwards;
+}
+#content nav .notification-bell .notification-dropdown .notification-header {
+  padding: 16px 20px;
+  background: var(--light);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+#content nav .notification-bell .notification-dropdown .notification-header h3 {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--dark);
+}
+#content
+  nav
+  .notification-bell
+  .notification-dropdown
+  .notification-header
+  .clear-all {
+  background: none;
+  border: none;
+  color: var(--red);
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: 500;
+  padding: 5px 10px;
+  border-radius: 6px;
+  transition: all 0.3s ease;
+}
+#content nav .notification-bell .notification-dropdown .notification-list {
+  max-height: 360px;
+  overflow-y: auto;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(0, 0, 0, 0.2) transparent;
+}
+#content
+  nav
+  .notification-bell
+  .notification-dropdown
+  .notification-list::-webkit-scrollbar {
+  width: 6px;
+}
+#content
+  nav
+  .notification-bell
+  .notification-dropdown
+  .notification-list::-webkit-scrollbar-thumb {
+  background-color: rgba(0, 0, 0, 0.2);
+  border-radius: 3px;
+}
+#content nav .notification-bell .notification-dropdown .notification-item {
+  padding: 16px 20px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  transition: background 0.3s ease;
+}
+#content
+  nav
+  .notification-bell
+  .notification-dropdown
+  .notification-item:hover {
+  background: var(--grey);
+}
+#content nav .notification-bell .notification-dropdown .notification-content {
+  flex: 1;
+  margin-right: 15px;
+}
+#content nav .notification-bell .notification-dropdown .notification-message {
+  color: var(--dark);
+  font-size: 14px;
+  line-height: 1.5;
+  margin-bottom: 4px;
+}
+#content nav .notification-bell .notification-dropdown .notification-time {
+  font-size: 12px;
+  color: #6c757d;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+#content nav .notification-bell .notification-dropdown .notification-time i {
+  font-size: 14px;
+}
+#content nav .notification-bell .notification-dropdown .delete-notification {
+  color: #6c757d;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 6px;
+  border-radius: 50%;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#content
+  nav
+  .notification-bell
+  .notification-dropdown
+  .delete-notification:hover {
+  background: rgba(108, 117, 125, 0.1);
+  color: var(--red);
+}
+/* Animations */
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+/* Add notification badge animation */
+#content nav .notification-bell .num.has-new {
+  animation: pulse 1s ease infinite;
+}
+/* Empty state styling */
+#content nav .notification-bell .notification-dropdown .empty-state {
+  padding: 30px 20px;
+  text-align: center;
+  color: #6c757d;
+}
+#content nav .notification-bell .notification-dropdown .empty-state i {
+  font-size: 40px;
+  margin-bottom: 10px;
+  opacity: 0.5;
+}
+/*todo NAVBAR */
+
+/*todo MAIN */
+#content main {
+  width: 100%;
+  padding: 36px 24px;
+  font-family: var(--poppins);
+  max-height: calc(100vh - 56px);
+  overflow-y: auto;
+}
+#content main .head-title {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  grid-gap: 16px;
+  flex-wrap: wrap;
+}
+#content main .head-title .left h1 {
+  font-size: 30px;
+  font-weight: 600;
+  margin-bottom: 10px;
+  color: var(--dark);
+}
+#content main .head-title .left .breadcrumb {
+  display: flex;
+  align-items: center;
+  grid-gap: 16px;
+}
+#content main .head-title .left .breadcrumb li {
+  color: var(--dark);
+}
+#content main .head-title .left .breadcrumb li a {
+  color: var(--dark-grey);
+  pointer-events: none;
+}
+#content main .head-title .left .breadcrumb li a.active {
+  color: var(--blue);
+  pointer-events: unset;
+}
+#content main .head-title .btn-date {
+  height: 36px;
+  padding: 0 16px;
+  border-radius: 36px;
+  background: var(--blue);
+  color: var(--white);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  grid-gap: 10px;
+  font-weight: 500;
+}
+
+#content main .box-info {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  grid-gap: 24px;
+  margin-top: 36px;
+}
+#content main .box-info li {
+  padding: 24px;
+  background: var(--light);
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  grid-gap: 24px;
+}
+#content main .box-info li .bx {
+  width: 80px;
+  height: 80px;
+  border-radius: 10px;
+  font-size: 36px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#content main .box-info li:nth-child(1) .bx {
+  background: var(--light-blue);
+  color: var(--blue);
+}
+#content main .box-info li:nth-child(2) .bx {
+  background: var(--light-yellow);
+  color: var(--yellow);
+}
+#content main .box-info li:nth-child(3) .bx {
+  background: var(--light-orange);
+  color: var(--orange);
+}
+#content main .box-info li .text h3 {
+  font-size: 24px;
+  font-weight: 600;
+  color: var(--dark);
+}
+#content main .box-info li .text p {
+  color: var(--dark);
+}
+
+#content main .table-data {
+  display: flex;
+  flex-wrap: wrap;
+  grid-gap: 24px;
+  margin-top: 24px;
+  width: 100%;
+  color: var(--dark);
+}
+#content main .table-data > div {
+  border-radius: 20px;
+  background: var(--light);
+  padding: 24px;
+  overflow-x: auto;
+}
+#content main .table-data .head {
+  display: flex;
+  align-items: center;
+  grid-gap: 16px;
+  margin-bottom: 24px;
+}
+#content main .table-data .head h3 {
+  margin-right: auto;
+  font-size: 24px;
+  font-weight: 600;
+}
+#content main .table-data .head .bx {
+  cursor: pointer;
+}
+
+#content main .table-data .order {
+  flex-grow: 1;
+  flex-basis: 500px;
+}
+#content main .table-data .order table {
+  width: 100%;
+  border-collapse: collapse;
+}
+#content main .table-data .order table th {
+  padding-bottom: 12px;
+  font-size: 13px;
+  text-align: left;
+  border-bottom: 1px solid var(--grey);
+}
+#content main .table-data .order table td {
+  padding: 16px 0;
+  transition: 0.2s all ease;
+}
+#content main .table-data .order table tr td:first-child {
+  display: flex;
+  align-items: center;
+  grid-gap: 12px;
+  padding-left: 6px;
+}
+#content main .table-data .order table td img {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+#content main .table-data .order table tbody tr:hover {
+  background: var(--grey);
+  transition: 0.2s all ease;
+}
+#content main .table-data .order table tr td .status {
+  font-size: 10px;
+  padding: 6px 16px;
+  color: var(--light);
+  border-radius: 20px;
+  font-weight: 700;
+}
+
+#content main .table-data .order .head-judul {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  grid-gap: 16px;
+  margin-bottom: 24px;
+  padding-bottom: 12px;
+}
+#content main .table-data .order .head .bx {
+  cursor: pointer;
+}
+#content main .table-data .head-judul h1 {
+  font-size: 24px;
+  margin: 0;
+  color: var(--dark);
+}
+#content main .table-data .filter-dropdown {
+  position: relative;
+  padding-right: 20px;
+}
+#content main .table-data .filter-dropdown i {
+  font-size: 24px;
+  cursor: pointer;
+  color: var(--dark);
+  transition: transform 0.3s ease, color 0.2s ease;
+}
+#content main .table-data .filter-dropdown i:hover {
+  color: var(--dark-grey);
+}
+#content main .table-data .filter-dropdown i.active {
+  transform: rotate(180deg);
+}
+#content main .table-data .filter-dropdown:hover .dropdown-menu,
+#content main .table-data .filter-dropdown:focus-within .dropdown-menu {
+  display: block;
+}
+#content main .table-data .dropdown-menu {
+  display: none;
+  opacity: 0;
+  position: absolute;
+  top: 100%;
+  right: 0;
+  width: 175px;
+  list-style: none;
+  margin: 0;
+  padding: 5px 0;
+  color: var(--dark);
+  background: var(--light);
+  border: 1px solid var(--dark-grey);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  z-index: 10;
+  border-radius: 8px;
+  transform: translateY(-10px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+#content main .table-data .filter-dropdown:hover .dropdown-menu,
+#content main .table-data .filter-dropdown:focus-within .dropdown-menu {
+  opacity: 1;
+  transform: translateY(0);
+}
+#content main .table-data .dropdown-menu li {
+  padding: 8px 15px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  font-size: 14px;
+}
+#content main .table-data .dropdown-menu li:hover {
+  background-color: var(--grey);
+}
+
+/*todo style status */
+#content main .table-data .order table tr td .status.completed {
+  background: var(--setuju);
+}
+#content main .table-data .order table tr td .status.process {
+  background: var(--proses);
+}
+#content main .table-data .order table tr td .status.tolak {
+  background: var(--red);
+}
+
+/*todo Style untuk button view */
+#content main .table-data .order table .view-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 3px;
+  color: var(--dark);
+  cursor: pointer;
+  font-size: 14px;
+  padding: 3px;
+  border: none;
+  background: none;
+  transition: 0.2s all ease-in-out;
+}
+#content main .table-data .order table .view-btn:hover {
+  color: var(--blue);
+}
+#content main .table-data .order table .view-btn i {
+  font-size: 16px;
+}
+
+/*todo style popup judul */
+#content main .table-data .order .modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5); /* Latar belakang modal transparan */
+  z-index: 9999;
+}
+#content main .table-data .order .modal .modal-content {
+  position: relative;
+  background-color: var(--light); /* Warna latar konten modal */
+  margin: 8% auto;
+  padding: 24px;
+  width: 90%;
+  max-width: 600px;
+  border-radius: 10px; /* Sudut lebih halus */
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15); /* Bayangan lebih lembut */
+  font-family: var(--poppins); /* Gunakan font yang kamu tentukan */
+  animation: fadeIn 0.3s ease-in-out;
+}
+#content main .table-data .order .modal .modal-content .close {
+  position: absolute;
+  right: 16px;
+  top: 5px;
+  font-size: 25px;
+  cursor: pointer;
+  color: var(--dark-grey); /* Warna close */
+  transition: color 0.3s ease;
+}
+#content main .table-data .order .modal .modal-content .close:hover {
+  color: var(--dark); /* Warna hover untuk close */
+}
+#content main .table-data .order .modal .modal-content .modal-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 16px;
+}
+#content main .table-data .order .modal .modal-content .modal-table th,
+#content main .table-data .order .modal .modal-content .modal-table td {
+  padding: 12px 16px;
+  text-align: left;
+  border-bottom: 1px solid var(--grey); /* Garis bawah */
+}
+#content main .table-data .order .modal .modal-content .modal-table th {
+  background-color: var(--dark-blue); /* Header tabel */
+  font-weight: 600;
+  color: var(--dark); /* Warna teks header */
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+#content main .table-data .order .modal .modal-content .modal-table td {
+  color: var(--dark);
+}
+#content main .table-data .order .modal .modal-content .status {
+  display: inline-block;
+  padding: 6px 12px;
+  border-radius: 9999px;
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: capitalize;
+  font-family: var(--poppins);
+}
+#content main .table-data .order .modal .modal-content .status.completed {
+  background-color: var(--setuju);
+  color: var(--light);
+}
+#content main .table-data .order .modal .modal-content .status.process {
+  background-color: var(--proses);
+  color: var(--light);
+}
+#content main .table-data .order .modal .modal-content .status.tolak {
+  background-color: var(--tolak);
+  color: var(--light);
+}
+
+/* Animasi popup judul */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Styling utama */
+#content main .table-data .todo {
+  flex-grow: 1;
+  flex-basis: 300px;
+  padding: 20px;
+  background: var(--light);
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+#content main .table-data .todo .head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+#content main .table-data .todo .head h3 {
+  font-size: 24px;
+  color: var(--primary);
+}
+#content main .table-data .todo .head .bx {
+  font-size: 25px;
+  cursor: pointer;
+  color: var(--primary);
+  border: 1.5px solid var(--dark);
+  border-radius: 10px;
+  transition: 0.2s all ease;
+}
+#content main .table-data .todo .head .bx:hover {
+  color: var(--blue);
+  border: 2px solid var(--blue);
+  transition: 0.2s all ease;
+}
+/* List todo */
+#content main .table-data .todo .todo-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+#content main .table-data .todo .todo-list li {
+  display: flex;
+  justify-content: space-between; /* Pisahkan teks/input dan ikon hapus */
+  align-items: center; /* Vertikal rata tengah */
+  padding: 10px 20px; /* Padding untuk ruang */
+  margin-bottom: 12px;
+  background: var(--grey);
+  border-left: 10px solid var(--orange);
+  border-radius: 5px;
+  position: relative; /* Agar tidak ada elemen overlap */
+  transition: transform 0.2s ease, background-color 0.3s ease;
+}
+#content main .table-data .todo .todo-list li.dragging {
+  opacity: 0.5;
+  transform: scale(1.05);
+  background-color: var(--light-grey);
+}
+#content main .table-data .todo .todo-list .drag-handle {
+  width: 5px;
+  height: 100%;
+  cursor: pointer;
+  margin-right: 15px;
+}
+#content main .table-data .todo .todo-list .drag-handle:active {
+  cursor: grabbing;
+}
+#content main .table-data .todo .todo-list li.dragging {
+  opacity: 0.5;
+  transform: scale(1.02);
+}
+#content main .table-data .todo .todo-list li.completed {
+  border-left-color: var(--blue);
+}
+
+#content main .table-data .todo .todo-list li.completed p {
+  text-decoration: line-through;
+  color: gray; /* Opsional: ubah warna teks */
+}
+#content main .table-data .todo .todo-list .todo-checkbox {
+  margin-right: 5px;
+  margin-left: -25px;
+  cursor: pointer;
+}
+#content main .table-data .todo .todo-list .todo-text {
+  flex-grow: 1;
+  margin: 0;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+/* Style untuk input editing */
+#content main .table-data .todo .todo-list .editing {
+  flex-grow: 1; /* Isi sisa ruang horizontal */
+  margin-right: 10px; /* Beri jarak dengan ikon hapus */
+  border: 2px solid #007bff;
+  padding: 6px 8px;
+  border-radius: 5px;
+  background-color: #f9f9f9;
+  outline: none;
+  font-size: 16px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+#content main .table-data .todo .todo-list .editing:focus {
+  border-color: #0056b3; /* Warna border lebih gelap saat fokus */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Tambahkan efek bayangan */
+}
+/* Inline editing style */
+#content main .table-data .todo .todo-list.todo-text.editing {
+  border: 2px solid var(--blue); /* Border warna biru */
+  padding: 4px 6px; /* Spasi di dalam input */
+  border-radius: 6px; /* Membulatkan sudut */
+  background: var(--light-grey); /* Warna background */
+  outline: none; /* Hilangkan outline default */
+  font-size: 16px; /* Ukuran font */
+  color: var(--dark-grey); /* Warna teks */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Tambahkan bayangan */
+  transition: border-color 0.3s ease, box-shadow 0.3s ease; /* Transisi lembut */
+}
+#content main .table-data .todo .todo-list .todo-text.editing:focus {
+  border-color: var(--dark-blue); /* Border saat fokus */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15); /* Efek bayangan tambahan */
+}
+#content main .table-data .todo .todo-list .delete-icon {
+  flex-shrink: 0; /* Ikon tetap berukuran kecil */
+  margin-left: 10px; /* Beri jarak dari input atau teks */
+  font-size: 20px;
+  color: var(--red);
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+#content main .table-data .todo .todo-list .delete-icon:hover {
+  color: #ff4d4d;
+}
+
+/* popup */
+#content main .table-data .todo .popup {
+  position: fixed; /* Memastikan popup tetap di tempat meskipun halaman di-scroll */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%; /* Membuat latar belakang memenuhi seluruh layar */
+  background: rgba(0, 0, 0, 0.5); /* Latar belakang semi transparan */
+  display: none; /* Menyembunyikan popup secara default */
+  justify-content: center;
+  align-items: center;
+  z-index: 9999; /* Agar popup berada di atas konten lain */
+}
+#content main .table-data .todo .popup-content {
+  background: var(--light);
+  padding: 20px;
+  border-radius: 10px;
+  width: 500px; /* Menentukan lebar popup */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Shadow agar popup terlihat lebih jelas */
+  position: fixed; /* Popup tetap di tempat meskipun halaman di-scroll */
+  top: 50%; /* Posisi dari atas */
+  left: 50%; /* Posisi dari kiri */
+  transform: translate(
+    -50%,
+    -50%
+  ); /* Menyesuaikan agar elemen berada di tengah halaman */
+}
+#content main .table-data .todo .popup h3 {
+  font-size: 18px;
+  color: var(--dark);
+  margin-bottom: 15px;
+}
+#new-todo-text {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  font-size: 14px;
+  text-transform: lowercase;
+}
+#content main .table-data .todo .popup .popup-content button {
+  padding: 10px;
+  background: var(--blue);
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  font-size: 14px;
+  width: 100%;
+  margin-top: 10px;
+  transition: background 0.3s ease;
+}
+button:hover {
+  background: #252bcf;
+}
+button:focus {
+  outline: none;
+}
+
+/* Styling untuk tombol close di popup */
+#content main .table-data .todo .popup .popup-content #close-popup {
+  background: var(--red);
+  margin-top: 5px;
+  transition: background 0.3s ease;
+}
+#content main .table-data .todo .popup .popup-content #close-popup:hover {
+  background: #cf322d;
+}
+
+/* Styling untuk tombol add todo */
+
+/*todo MAIN */
+
+/*todo CONTENT */
+
+/* todo responsive */
+@media screen and (max-width: 768px) {
+  #sidebar {
+    width: 200px;
+  }
+
+  #content {
+    width: calc(100% - 60px);
+    left: 200px;
+  }
+
+  #content nav .nav-link {
+    display: none;
+  }
+
+  #content main .table-data .order .modal .modal-content {
+    width: 95%; /* Modal lebih kecil di layar sempit */
+    margin: 10% auto;
+    padding: 20px;
+    font-size: 14px; /* Ukuran font lebih kecil */
+  }
+
+  #content main .table-data .order .modal .modal-content .modal-table th,
+  #content main .table-data .order .modal .modal-content .modal-table td {
+    padding: 10px 12px; /* Kurangi padding */
+    font-size: 12px; /* Ukuran font lebih kecil */
+  }
+
+  #content main .table-data .order .modal .modal-content .status {
+    font-size: 10px; /* Ukuran teks status lebih kecil */
+    padding: 4px 8px;
+  }
+
+  #content nav .notification-bell .notification-dropdown {
+    width: 300px;
+    right: -100%;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  #content nav form .form-input input {
+    display: none;
+  }
+
+  #content nav form .form-input button {
+    width: auto;
+    height: auto;
+    background: transparent;
+    border-radius: none;
+    color: var(--dark);
+  }
+
+  #content nav form.show .form-input input {
+    display: block;
+    width: 100%;
+  }
+  #content nav form.show .form-input button {
+    width: 36px;
+    height: 100%;
+    border-radius: 0 36px 36px 0;
+    color: var(--light);
+    background: var(--red);
+  }
+
+  #content nav form.show ~ .notification,
+  #content nav form.show ~ .profile {
+    display: none;
+  }
+
+  #content main .box-info {
+    grid-template-columns: 1fr;
+  }
+
+  #content main .table-data .head {
+    min-width: 420px;
+  }
+  #content main .table-data .order table {
+    min-width: 420px;
+  }
+  #content main .table-data .todo .todo-list {
+    min-width: 420px;
+  }
+  #content main .table-data .todo .popup-content {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    width: 300px; /* Menentukan lebar popup */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Shadow agar popup terlihat lebih jelas */
+    position: fixed; /* Popup tetap di tempat meskipun halaman di-scroll */
+    top: 50%; /* Posisi dari atas */
+    left: 50%; /* Posisi dari kiri */
+    transform: translate(
+      -50%,
+      -50%
+    ); /* Menyesuaikan agar elemen berada di tengah halaman */
+  }
+}
+
+@media screen and (max-width: 480px) {
+  #content main .head-title .btn-date {
+    font-size: 12px;
+    height: 30px;
+    padding: 0 16px;
+    border-radius: 36px;
+    background: var(--blue);
+    color: var(--light);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    grid-gap: 10px;
+    font-weight: 300;
+  }
+  /* Modal responsif */
+  #content main .table-data .order .modal .modal-content {
+    margin: 10px auto; /* Margin kecil di sekeliling */
+    padding: 10px; /* Padding lebih kecil */
+    width: 90%; /* Modal menyesuaikan lebar layar */
+    max-width: 100%; /* Hindari melampaui lebar layar */
+    overflow-x: auto; /* Scroll horizontal jika diperlukan */
+  }
+
+  /* Tabel dalam modal */
+  #content main .table-data .order .modal .modal-content .modal-table {
+    font-size: 10px; /* Ukuran teks lebih kecil */
+    width: 100%; /* Tabel lebar penuh */
+    border-collapse: collapse; /* Hapus spasi antar garis tabel */
+  }
+
+  #content main .table-data .order .modal .modal-content .modal-table th,
+  #content main .table-data .order .modal .modal-content .modal-table td {
+    padding: 6px; /* Kurangi padding antar sel */
+    text-align: left; /* Pastikan rata kiri */
+    word-wrap: break-word; /* Bungkus teks panjang */
+  }
+
+  /* Kolom status */
+  #content main .table-data .order .modal .modal-content .status {
+    display: block; /* Tampilkan status sebagai blok */
+    text-align: center; /* Pusatkan teks status */
+    margin: 5px 0; /* Jarak antar status */
+    font-size: 10px; /* Perkecil teks untuk layar kecil */
+  }
+
+  /* Ikon close */
+  #content main .table-data .order .modal .modal-content .close {
+    position: fixed;
+    font-size: 18px; /* Perkecil ikon close */
+    right: 28px; /* Sesuaikan jarak */
+    top: 8px; /* Sesuaikan posisi */
+  }
+
+  /* Tombol atau link */
+  #content main .table-data .order .modal .modal-content button,
+  #content main .table-data .order .modal .modal-content a {
+    font-size: 12px; /* Perkecil tombol/link */
+    padding: 5px 10px; /* Sesuaikan padding */
+    margin: 5px 0; /* Jarak antar tombol/link */
+  }
+
+  /* Perbaikan tombol-tombol jika ada */
+  #content main .table-data .order .modal .modal-content .btn {
+    display: block; /* Tampilkan tombol penuh */
+    width: 100%; /* Tombol penuh sesuai layar */
+    font-size: 12px; /* Ukuran tombol kecil */
+    margin: 5px 0; /* Jarak antar tombol */
+  }
+}
+/* todo responsive */

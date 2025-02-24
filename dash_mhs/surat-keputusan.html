@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- todo Boxicons -->
+    <link
+      href="https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+    <!--todo My CSS -->
+    <link rel="stylesheet" href="css/surat-keputusan.css" />
+
+    <title>Dashboard Mahasiswa</title>
+  </head>
+  <body>
+    <!--? SIDEBAR -->
+    <section id="sidebar">
+      <a href="#" class="brand">
+        <img src="../assets/image/logo.png" alt="" />
+        <p>SIMTAK</p>
+      </a>
+      <ul class="side-menu top">
+        <li>
+          <a href="dashboard.html">
+            <i class="bx bxs-dashboard"></i>
+            <span class="text">Dashboard</span>
+          </a>
+        </li>
+        <li>
+          <a href="judul-ta.html">
+            <i class="bx bx-book-reader"></i>
+            <span class="text">Judul TA</span>
+          </a>
+        </li>
+        <li class="active">
+          <a href="surat-keputusan.html">
+            <i class="bx bx-file"></i>
+            <span class="text">Surat Keputusan</span>
+          </a>
+        </li>
+      </ul>
+      <ul class="side-menu">
+        <hr />
+        <li>
+          <a href="settings.html">
+            <i class="bx bxs-cog"></i>
+            <span class="text">Settings</span>
+          </a>
+        </li>
+        <li>
+          <a href="#" class="logout">
+            <i class="bx bxs-log-out-circle"></i>
+            <span class="text">Logout</span>
+          </a>
+        </li>
+      </ul>
+    </section>
+    <!--? SIDEBAR -->
+
+    <!--? CONTENT -->
+    <section id="content">
+      <!--? NAVBAR -->
+      <nav>
+        <i class="bx bx-menu"></i>
+        <form action="#">
+          <div class="form-input">
+            <input type="search" placeholder="Search..." />
+            <button type="submit" class="search-btn">
+              <i class="bx bx-search"></i>
+            </button>
+          </div>
+        </form>
+        <input type="checkbox" id="switch-mode" hidden />
+        <label for="switch-mode" class="switch-mode"></label>
+
+        <!-- popup notifikasi -->
+        <a href="#" class="notification-bell">
+          <i class="bx bxs-bell"></i>
+          <span class="num">8</span>
+          <!-- Dropdown untuk notifikasi -->
+          <div class="notification-dropdown">
+            <div class="notification-header">
+              <h3>Notifikasi</h3>
+              <button class="clear-all">Hapus Semua</button>
+            </div>
+            <div class="notification-list">
+              <!-- Notifikasi akan dirender di sini -->
+            </div>
+          </div>
+        </a>
+        <a href="#" class="profile">
+          <img src="../assets/image/profil.jpg" />
+        </a>
+      </nav>
+      <!--? NAVBAR -->
+
+      <!--? MAIN -->
+      <main>
+        <div class="head-title">
+          <div class="left">
+            <ul class="breadcrumb">
+              <li>
+                <a href="#">Dashboard</a>
+              </li>
+              <li><i class="bx bx-chevron-right"></i></li>
+              <li>
+                <a class="active" href="#">Settings</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- start surat keputusan -->
+        <div class="sk-container">
+          <div class="sk-header">
+            <h2>Surat Keputusan</h2>
+            <p>Tugas Akhir Mahasiswa</p>
+          </div>
+
+          <div class="download-section">
+            <div class="file-info">
+              <div class="file-icon">
+                <i class="bx bxs-file-pdf"></i>
+              </div>
+              <div class="file-details">
+                <h3>SK_TugasAkhir_2024.pdf</h3>
+                <span>PDF File • 2.4 MB</span>
+              </div>
+            </div>
+
+            <a href="#" class="download-button">
+              <i class="bx bx-download"></i>
+              <span>Unduh</span>
+            </a>
+          </div>
+        </div>
+        <!-- end surat keputusan -->
+      </main>
+      <!--? MAIN -->
+    </section>
+    <!--? CONTENT -->
+
+    <script src="/dash_mhs/js/mahasiswa.js"></script>
+    <script src="js/settings.js"></script>
+  </body>
+</html>

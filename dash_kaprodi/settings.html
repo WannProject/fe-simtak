@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- todo Boxicons -->
+    <link
+      href="https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+    <!--todo My CSS -->
+    <link rel="stylesheet" href="css/settings.css" />
+
+    <title>Dashboard DPA</title>
+  </head>
+  <body>
+    <!--? SIDEBAR -->
+    <section id="sidebar">
+      <a href="#" class="brand">
+        <img src="../assets/image/logo.png" alt="" />
+        <p>SIMTAK</p>
+      </a>
+      <ul class="side-menu top">
+        <li>
+          <a href="dashboard.html">
+            <i class="bx bxs-dashboard"></i>
+            <span class="text">Dashboard</span>
+          </a>
+        </li>
+        <li>
+          <a href="daftar-judul.html">
+            <i class="bx bx-book-reader"></i>
+            <span class="text">daftar judul</span>
+          </a>
+        </li>
+        <li>
+          <a href="autentikasi-mahasiswa.html">
+            <i class="bx bxs-group"></i>
+            <span class="text">autentikasi</span>
+          </a>
+        </li>
+      </ul>
+      <ul class="side-menu">
+        <hr />
+        <li class="active">
+          <a href="settings.html">
+            <i class="bx bxs-cog"></i>
+            <span class="text">Settings</span>
+          </a>
+        </li>
+        <li>
+          <a href="#" class="logout">
+            <i class="bx bxs-log-out-circle"></i>
+            <span class="text">Logout</span>
+          </a>
+        </li>
+      </ul>
+    </section>
+    <!--? SIDEBAR -->
+
+    <!--? CONTENT -->
+    <section id="content">
+      <!--? NAVBAR -->
+      <nav>
+        <i class="bx bx-menu"></i>
+        <form action="#">
+          <div class="form-input">
+            <input type="search" placeholder="Search..." />
+            <button type="submit" class="search-btn">
+              <i class="bx bx-search"></i>
+            </button>
+          </div>
+        </form>
+        <input type="checkbox" id="switch-mode" hidden />
+        <label for="switch-mode" class="switch-mode"></label>
+        
+        <!-- popup notifikasi -->
+        <a href="#" class="notification-bell">
+          <i class="bx bxs-bell"></i>
+           <span class="num">8</span>
+            <!-- Dropdown untuk notifikasi -->
+            <div class="notification-dropdown">
+              <div class="notification-header">
+                <h3>Notifikasi</h3>
+                <button class="clear-all">Hapus Semua</button>
+              </div>
+              <div class="notification-list">
+              <!-- Notifikasi akan dirender di sini -->
+              </div>
+            </div>
+          </a>
+        <a href="#" class="profile">
+          <img src="../assets/image/profil.jpg" />
+        </a>
+      </nav>
+      <!--? NAVBAR -->
+
+      <!--? MAIN -->
+      <main>
+        <div class="head-title">
+          <div class="left">
+            <ul class="breadcrumb">
+              <li>
+                <a href="#">Dashboard</a>
+              </li>
+              <li><i class="bx bx-chevron-right"></i></li>
+              <li>
+                <a class="active" href="#">Settings</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- start settings -->
+        <div class="settings-container">
+          <div class="settings-header">
+            <h3>Pengaturan Akun Kaprodi</h3>
+            </div>
+
+          <div class="settings-section">
+            <h4>Profil Dosen</h4>
+            <form action="#">
+              <div class="form-group">
+                <label for="name">Nama Lengkap</label>
+                <input type="text" id="name" value="Kurniawan" />
+              </div>
+              <div class="form-group">
+                <label for="nidn">NIDN</label>
+                <input type="text" id="nidn" value="1234567890" disabled />
+              </div>
+              <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" value="kurniawan@univ.com" />
+              </div>
+              <div class="form-group">
+                <label for="phone">Nomor Kontak</label>
+                <input type="tel" id="phone" value="0823456789" />
+              </div>
+              <div class="form-group">
+                <label for="photo">Foto Profil</label>
+                <input type="file" id="photo" />
+              </div>
+              <button type="submit" class="btn btn-primary">
+                Simpan Perubahan
+              </button>
+            </form>
+          </div>
+
+          <div class="settings-section">
+            <h4>Pengaturan Akun</h4>
+            <form action="#">
+              <div class="form-group">
+                <label for="username">NIDN</label>
+                <input type="text" id="nidn" value="nidn" disabled />
+              </div>
+              <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" id="password" placeholder="********" />
+              </div>
+              <button class="btn btn-warning" data-popup-trigger="popup-ubah-password">
+                Ubah Kata Sandi
+              </button>
+            </form>
+          </div>
+
+          <div class="settings-section">
+            <h4>Notifikasi</h4>
+            <div class="form-group">
+              <label for="email-notifications">Notifikasi Email</label>
+              <input type="checkbox" id="email-notifications" checked />
+            </div>
+            <div class="form-group">
+              <label for="sms-notifications">Notifikasi SMS</label>
+              <input type="checkbox" id="sms-notifications" />
+            </div>
+            <button class="btn btn-primary">Simpan Pengaturan</button>
+          </div>
+
+        
+          <!-- Popup for "Ubah Kata Sandi" -->
+          <div class="popup-overlay" id="overlay"></div>
+          <div class="popup" id="popup-ubah-password">
+              <div class="popup-content">
+                  <h4 class="popup-title">Konfirmasi</h4>
+                  <p class="popup-message">Apakah Anda yakin ingin mengubah kata sandi?</p>
+                  <div class="popup-buttons">
+                      <button class="btn btn-primary confirm-btn">Ya</button>
+                      <button class="btn btn-danger cancel-btn">Tidak</button>
+                  </div>
+              </div>
+          </div>
+        <!-- end settings -->
+      </main>
+      <!--? MAIN -->
+    </section>
+    <!--? CONTENT -->
+
+    <script src="/dash_kaprodi/js/kaprodi.js"></script>
+    <script src="/dash_kaprodi/js/settings.js"></script>
+  </body>
+</html>

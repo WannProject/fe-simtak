@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- icon -->
+    <link rel="icon" type="image/x-icon" href="/assets/icons/favicon.ico" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Form Registrasi Rektor</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="corner-shape">
+      <img src="../../assets/image/dekorasi.svg" alt="corner decoration" />
+    </div>
+    <div class="logo">
+      <div class="corner-decoration"></div>
+      <img alt="Logo of the institution" src="../../assets/image/logo.png" />
+    </div>
+    <div class="title">SIMTAK</div>
+    <div class="subtitle">Sistem Informasi manajemen tugas akhir</div>
+    <div class="container">
+      <form>
+        <div class="form-group">
+          <label for="nim"> Nidn : </label>
+          <input id="nim" name="nim" type="text" />
+        </div>
+
+        <div class="form-group">
+          <label for="password"> Password : </label>
+          <input id="password" name="password" type="password" />
+        </div>
+
+        <div class="akun-set">
+          <div class="form-group login-link">
+            Belum punya akun?
+            <a href="register.html"> buat akun </a>
+          </div>
+          <div class="lupa-pass">
+            <a href="register.html"> Lupa Password? </a>
+          </div>
+        </div>
+
+        <button class="btn" type="submit">
+          <a href="/dash_rektor/dashboard.html">masuk</a>
+        </button>
+      </form>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
