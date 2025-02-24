@@ -1,9 +1,9 @@
 # FE-SIMTAK - Login Otomatis
 
 ## Cara Masuk
-1. Buka aplikasi.
+1. Buka website dengan mengunjungi link https://fe-simtak-wannprojects-projects.vercel.app/.
 2. Klik tombol **Masuk**.
-3. Anda akan langsung diarahkan ke halaman utama tanpa perlu memasukkan kredensial.
+3. setelah klik maka akan langsung diarahkan ke halaman dashboard tanpa perlu memasukkan kredensial.
 
 ## Teknologi yang Digunakan
 - HTMX
@@ -18,8 +18,6 @@
    git clone https://github.com/WannProject/fe-simtak.git
    cd fe-simtak
    ```
-2. Jalankan proyek sesuai kebutuhan frontend Anda.
-
-## Lisensi
-Proyek ini dirilis di bawah lisensi MIT.
+## Keterangan
+hanya frontend dan tidak termasuk backend
 
